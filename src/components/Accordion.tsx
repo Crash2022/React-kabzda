@@ -1,4 +1,4 @@
-import React, {FC} from 'react'
+import React, {FC, useState} from 'react'
 import {AccordionTitle} from "./AccordionTitle"
 import {AccordionBody} from "./AccordionBody"
 import {Button} from "../UI/Button";
@@ -10,17 +10,24 @@ export type AccordionPropsType = {
 
 export const Accordion: FC<AccordionPropsType> = ({title}) => {
 
-    const collapsed = false;
+    //const collapsed = false;
+    let [menuCollapsed, setMenuCollapsed] = useState<boolean>(false);
 
-    const buttonHandler = () => {
-        //console.log('working')
+    const buttonHandlerNotCollapsed = () => {
+        //console.log('развернуть')
+        setMenuCollapsed(false)
+    }
+    const buttonHandlerCollapsed = () => {
+        //console.log('свернуть')
+        setMenuCollapsed(true)
     }
 
     return (
         <>
             <AccordionTitle title={title}/>
-            <Button name={"Свернуть/Развернуть"} callBack={buttonHandler}/>
-            { {collapsed} && <AccordionBody/> }
+            <Button name={"Развернуть"} callBack={buttonHandlerNotCollapsed}/>
+            <Button name={"Свернуть"} callBack={buttonHandlerCollapsed}/>
+            { !menuCollapsed && <AccordionBody/> }
         </>
     );
 }
