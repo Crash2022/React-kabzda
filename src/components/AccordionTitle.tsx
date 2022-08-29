@@ -1,8 +1,12 @@
-import React from 'react';
+import React, {FC} from 'react';
 
-export const AccordionTitle = () => {
+export type AccordionTitleType = {
+    title: string
+}
+
+export const AccordionTitle: FC<AccordionTitleType> = ({title}) => {
 
     return (
-        <h2>Меню 1</h2>
+        <h2>{title}</h2>
     );
 }

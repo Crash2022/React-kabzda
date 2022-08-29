@@ -1,14 +1,16 @@
-import React, {useState} from 'react';
-import {Input} from "../UI/Input";
-import {Button} from "../UI/Button";
+import React, {FC} from 'react';
 import {AccordionTitle} from "./AccordionTitle";
 import {AccordionBody} from "./AccordionBody";
 
-export const Accordion = () => {
+export type AccordionPropsType = {
+    title: string
+}
+
+export const Accordion: FC<AccordionPropsType> = ({title}) => {
 
     return (
         <>
-            <AccordionTitle/>
+            <AccordionTitle title={title}/>
             <AccordionBody/>
         </>
     );
