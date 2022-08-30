@@ -7,7 +7,7 @@ export const App = () => {
     return (
         <div className="App">
             <h1>REACT "Кабзда как просто"</h1>
-            <Accordion title={"Меню 1"} />
+            <Accordion title={"Меню 111"} />
             <Accordion title={"Меню 2"} />
         </div>
     );
