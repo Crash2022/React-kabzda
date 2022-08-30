@@ -34,6 +34,7 @@ export const Rating = () => {
             <Star selected={rating > 2}/><Button name={"3"} callBack={addStar3}/>
             <Star selected={rating > 3}/><Button name={"4"} callBack={addStar4}/>
             <Star selected={rating > 4}/><Button name={"5"} callBack={addStar5}/>
+            <span><button style={{marginLeft: "10px"}} onClick={()=>{setRating(0)}}>clear</button></span>
         </div>
     );
 }
