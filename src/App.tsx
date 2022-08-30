@@ -8,7 +8,7 @@ export const App = () => {
     return (
         <div className="App">
             <div className="wrapper">
-                <h1>REACT "Кабзда как просто"</h1>
+                <h1 style={{margin: "20px 0px"}}>REACT "Кабзда как просто"</h1>
                 <Accordion title={"Меню 1"}/>
                 <Accordion title={"Меню 2"}/>
                 <Rating/>
