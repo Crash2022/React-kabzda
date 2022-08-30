@@ -31,8 +31,8 @@ export const Rating = () => {
     }
 
     return (
-        <div style={{marginTop: "20px"}}>
-            <h2>Rating</h2>
+        <div>
+            <h2 style={{marginBottom: "10px"}}>Rating</h2>
             <Star selected={rating > 0}/><Button name={"1"} callBack={addStar1}/>
             <Star selected={rating > 1}/><Button name={"2"} callBack={addStar2}/>
             <Star selected={rating > 2}/><Button name={"3"} callBack={addStar3}/>
