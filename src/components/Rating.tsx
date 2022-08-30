@@ -11,7 +11,7 @@ export const Rating = () => {
     let [rating, setRating] = useState(0);
 
     const addStar = (star:number) => {
-        setRating(star)
+        setRating(star);
     }
 
     return (
