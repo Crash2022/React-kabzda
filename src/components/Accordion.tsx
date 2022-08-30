@@ -23,8 +23,8 @@ export const Accordion: FC<AccordionPropsType> = ({title}) => {
     }*/
 
     const buttonHandlerCollapsed = () => {
-        menuCollapsed = !menuCollapsed;
-        setMenuCollapsed(menuCollapsed);
+        //menuCollapsed = !menuCollapsed;
+        setMenuCollapsed(!menuCollapsed);
     }
 
     return (

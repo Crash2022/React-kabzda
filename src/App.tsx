@@ -7,10 +7,12 @@ export const App = () => {
 
     return (
         <div className="App">
-            <h1>REACT "Кабзда как просто"</h1>
-            <Accordion title={"Меню 1"} />
-            <Accordion title={"Меню 2"} />
-            <Rating />
+            <div className="wrapper">
+                <h1>REACT "Кабзда как просто"</h1>
+                <Accordion title={"Меню 1"}/>
+                <Accordion title={"Меню 2"}/>
+                <Rating/>
+            </div>
         </div>
     );
 }
