@@ -1,5 +1,5 @@
-import React, {ButtonHTMLAttributes, useState} from 'react'
-import {Button} from "../UI/Button";
+import React, {useState} from 'react'
+import {ButtonRating} from "../UI/ButtonRating";
 import {Star} from "./Star";
 
 /*export type RatingPropsType = {
@@ -17,11 +17,11 @@ export const Rating = () => {
     return (
         <div>
             <h2 style={{marginBottom: "10px"}}>Rating</h2>
-            <Star selected={rating > 0}/><Button name={"1"} callBack={addStar}/>
-            <Star selected={rating > 1}/><Button name={"2"} callBack={addStar}/>
-            <Star selected={rating > 2}/><Button name={"3"} callBack={addStar}/>
-            <Star selected={rating > 3}/><Button name={"4"} callBack={addStar}/>
-            <Star selected={rating > 4}/><Button name={"5"} callBack={addStar}/>
+            <Star selected={rating > 0}/><ButtonRating name={"1"} callBack={addStar}/>
+            <Star selected={rating > 1}/><ButtonRating name={"2"} callBack={addStar}/>
+            <Star selected={rating > 2}/><ButtonRating name={"3"} callBack={addStar}/>
+            <Star selected={rating > 3}/><ButtonRating name={"4"} callBack={addStar}/>
+            <Star selected={rating > 4}/><ButtonRating name={"5"} callBack={addStar}/>
             <span><button style={{marginLeft: "10px"}} onClick={()=>{setRating(0)}}>not rated</button></span>
         </div>
     );

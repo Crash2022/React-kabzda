@@ -14,7 +14,5 @@ export const Star = (props: StarPropsType) => {
         <>
             { props.selected ? <span><b>star</b></span> : <span>star</span> }
         </>
-
     )
-
 }

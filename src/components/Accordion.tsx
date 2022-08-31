@@ -30,8 +30,6 @@ export const Accordion: FC<AccordionPropsType> = ({title}) => {
     return (
         <div style={{margin: "20px 0px"}}>
             <AccordionTitle title={title}/>
-            {/*<Button name={"Развернуть"} callBack={buttonHandlerNotCollapsed}/>
-            <Button name={"Свернуть"} callBack={buttonHandlerCollapsed}/>*/}
             <Button name={"Toggle"} callBack={buttonHandlerCollapsed}/>
             { !menuCollapsed ? <AccordionBody/> : '' }
         </div>
