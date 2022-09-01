@@ -17,7 +17,7 @@ export const Rating = () => {
     }
 
     const ratingHandlerCollapsed = () => {
-        setRatingCollapsed(value => !value);
+        setRatingCollapsed(!ratingCollapsed);
     }
 
     return (
