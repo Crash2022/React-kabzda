@@ -10,17 +10,7 @@ export type AccordionPropsType = {
 
 export const Accordion: FC<AccordionPropsType> = ({title}) => {
 
-    //const collapsed = false;
     let [menuCollapsed, setMenuCollapsed] = useState<boolean>(false);
-
-    /*const buttonHandlerNotCollapsed = () => {
-        //console.log('развернуть')
-        setMenuCollapsed(false)
-    }
-    const buttonHandlerCollapsed = () => {
-        //console.log('свернуть')
-        setMenuCollapsed(true)
-    }*/
 
     const buttonHandlerCollapsed = () => {
         //menuCollapsed = !menuCollapsed;
