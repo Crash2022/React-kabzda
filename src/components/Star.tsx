@@ -1,26 +1,23 @@
 import React from 'react'
+import {RatingValuePropsType} from "./Rating";
 
 type StarPropsType = {
-    rating:number
+    rating: RatingValuePropsType
     selected: boolean
-    pushStar: (rating:number) => void
+    pushStar: (value: RatingValuePropsType) => void
 }
 
 export const Star = (props: StarPropsType) => {
-    /*if (props.selected) {
-        return <span><b>star</b></span>
-    } else {
-        return <span>star</span>
-    }*/
 
-    const selectStar = () => {
+    const selectStarHandler = () => {
         props.pushStar(props.rating)
     }
+
     return (
         <>
             { props.selected
-                ? <span style={{marginRight: "5px", cursor: "pointer"}} onClick={selectStar}><b>star</b></span>
-                : <span style={{marginRight: "5px", cursor: "pointer"}} onClick={selectStar}>star</span> }
+                ? <span style={{marginRight: "5px", cursor: "pointer"}} onClick={selectStarHandler}><b>star</b></span>
+                : <span style={{marginRight: "5px", cursor: "pointer"}} onClick={selectStarHandler}>star</span> }
         </>
     )
 }
