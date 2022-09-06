@@ -1,27 +1,28 @@
 import React, {FC, useState} from 'react'
 import {AccordionTitle} from "./AccordionTitle"
 import {AccordionBody} from "./AccordionBody"
-import {Button} from "../UI/Button";
 
 export type AccordionPropsType = {
     title: string
     collapsed?: boolean
+    menu1CollapsedControlled: boolean
+    setMenu1CollapsedControlled: (value: boolean) => void
 }
 
-export const Accordion: FC<AccordionPropsType> = ({title}) => {
+export const Accordion: FC<AccordionPropsType> = ({title, menu1CollapsedControlled, setMenu1CollapsedControlled}) => {
 
-    let [menuCollapsed, setMenuCollapsed] = useState<boolean>(false);
+    let [menu2CollapsedUncontrolled, setMenu2CollapsedUncontrolled] = useState<boolean>(false);
 
-    const buttonHandlerCollapsed = () => {
-        //menuCollapsed = !menuCollapsed;
-        setMenuCollapsed(!menuCollapsed);
-    }
+    /*const buttonHandlerCollapsed = () => {
+        setMenu2CollapsedUncontrolled(!menu2CollapsedUncontrolled);
+    }*/
 
     return (
         <div style={{margin: "20px 0px"}}>
-            <AccordionTitle title={title} collapseMenu={buttonHandlerCollapsed}/>
-            {/*<Button name={"Toggle"} callBack={buttonHandlerCollapsed}/>*/}
-            { !menuCollapsed ? <AccordionBody/> : '' }
+            <AccordionTitle title={title} collapseMenu={ ()=> setMenu1CollapsedControlled(!menu1CollapsedControlled) }/>
+            {/*<AccordionTitle title={title} collapseMenu={buttonHandlerCollapsed}/>*/}
+            { !menu1CollapsedControlled ? <AccordionBody/> : '' }
+            {/*{ !menu2CollapsedUncontrolled ? <AccordionBody/> : '' }*/}
         </div>
     );
 }

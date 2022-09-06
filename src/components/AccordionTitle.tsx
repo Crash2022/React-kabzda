@@ -9,7 +9,7 @@ export const AccordionTitle: FC<AccordionTitleType> = ({title, collapseMenu}) =>
 
     return (
         <>
-            <h2 onClick={collapseMenu}>{title}</h2>
+            <h2 onClick={ ()=> collapseMenu() } style={{minWidth: "250px"}}>{title}</h2>
         </>
     );
 }
