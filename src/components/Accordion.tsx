@@ -19,7 +19,10 @@ export const Accordion: FC<AccordionPropsType> = ({title, menu1CollapsedControll
 
     return (
         <div style={{margin: "20px 0px"}}>
-            <AccordionTitle title={title} collapseMenu={ ()=> setMenu1CollapsedControlled(!menu1CollapsedControlled) }/>
+            <AccordionTitle title={title}
+                            menu1CollapsedControlled={menu1CollapsedControlled}
+                            setMenu1CollapsedControlled={setMenu1CollapsedControlled}
+            />
             { !menu1CollapsedControlled ? <AccordionBody/> : '' }
             {/*<AccordionTitle title={title} collapseMenu={buttonHandlerCollapsed}/>*/}
             {/*{ !menu2CollapsedUncontrolled ? <AccordionBody/> : '' }*/}
