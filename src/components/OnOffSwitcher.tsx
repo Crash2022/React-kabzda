@@ -11,12 +11,14 @@ export const OnOffSwitcher = (props: SwitcherLightPropsType) => {
     const switcherOn = `${props.lightValue && styles.on}`
     const switcherOff = `${!props.lightValue && styles.off}`
 
-    const onOffLight = `${styles.light}`
+    const onClickHandler = () => {
+        props.lightChange(!props.lightValue)
+    }
 
     return (
         <div className={styles.switcherMain}>
-            <div className={`${styles.base} ${switcherOn}`}>On</div>
-            <div className={`${styles.base} ${switcherOff}`}>Off</div>
+            <div className={`${styles.base} ${switcherOn}`} onClick={onClickHandler}>On</div>
+            <div className={`${styles.base} ${switcherOff}`} onClick={onClickHandler}>Off</div>
             <div className={`${styles.light} ${switcherOn} ${switcherOff}`}></div>
         </div>
     )
