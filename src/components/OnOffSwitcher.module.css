@@ -17,9 +17,11 @@
 }
 .on {
     background-color: green;
+    color: white;
 }
 .off {
     background-color: red;
+    color: white;
 }
 
 .light {
