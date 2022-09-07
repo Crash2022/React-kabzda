@@ -1,13 +1,16 @@
-import React, {FC, useState} from 'react'
+import React, {useState} from 'react'
 import './App.css'
 import {Accordion} from './components/Accordion'
-import {Rating, RatingValuePropsType} from "./components/Rating";
+import {Rating, RatingValuePropsType} from "./components/Rating"
+import {OnOffSwitcher} from "./components/OnOffSwitcher"
 
 export const App = () => {
 
     let [rating, setRating] = useState<RatingValuePropsType>(0);
 
     let [menu1CollapsedControlled, setMenu1CollapsedControlled] = useState<boolean>(false);
+
+    const [light, setLight] = useState<boolean>(false);
 
     return (
         <div className="App">
@@ -18,6 +21,7 @@ export const App = () => {
                            setMenu1CollapsedControlled={setMenu1CollapsedControlled}/>
                 {/*<Accordion title={"Меню 2 - неконтролируемое"}/>*/}
                 <Rating rating={rating} onClickStar={setRating}/>
+                <OnOffSwitcher lightValue={light} lightChange={setLight}/>
             </div>
         </div>
     );

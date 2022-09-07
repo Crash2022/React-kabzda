@@ -14,7 +14,6 @@ export const Accordion: FC<AccordionPropsType> = ({title, menu1CollapsedControll
     /*let [menu2CollapsedUncontrolled, setMenu2CollapsedUncontrolled] = useState<boolean>(false);*/
 
     /*const buttonHandlerCollapsed = () => {
-
         setMenu2CollapsedUncontrolled(!menu2CollapsedUncontrolled);
     }*/
 
