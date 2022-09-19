@@ -3,6 +3,9 @@ import './App.css'
 import {Accordion} from './components/Accordion'
 import {Rating, RatingValuePropsType} from "./components/Rating"
 import {OnOffSwitcher} from "./components/OnOffSwitcher"
+import {ControlledInput} from "./components/ControlledInput";
+import {ControlledCheckbox} from "./components/ControlledCheckbox";
+import {ControlledSelect} from "./components/ControlledSelect";
 
 export const App = () => {
 
@@ -22,6 +25,9 @@ export const App = () => {
                 {/*<Accordion title={"Меню 2 - неконтролируемое"}/>*/}
                 <Rating rating={rating} onClickStar={setRating}/>
                 <OnOffSwitcher lightValue={light} lightChange={setLight}/>
+                <ControlledInput />
+                <ControlledCheckbox />
+                <ControlledSelect />
             </div>
         </div>
     );
