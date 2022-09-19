@@ -8,10 +8,6 @@ export type AccordionBodyPropsType = {
 
 export const AccordionBody: React.FC<AccordionBodyPropsType> = (props) => {
 
-    /*const onClickHandler = () => {
-        console.log('was clicked');
-    }*/
-
     return (
         <ul>
             {

@@ -6,6 +6,7 @@ import {OnOffSwitcher} from "./components/OnOffSwitcher/OnOffSwitcher"
 import {ControlledInput} from "./components/ControlledElements/ControlledInput";
 import {ControlledCheckbox} from "./components/ControlledElements/ControlledCheckbox";
 import {ControlledSelect} from "./components/ControlledElements/ControlledSelect";
+import {Select} from "./components/Select/Select";
 
 export const App = () => {
 
@@ -29,6 +30,7 @@ export const App = () => {
                 <ControlledInput />
                 <ControlledCheckbox />
                 <ControlledSelect />
+                <Select />
             </div>
         </div>
     );
