@@ -1,11 +1,11 @@
 import React, {useState} from 'react'
 import './App.css'
-import {Accordion} from './components/Accordion'
-import {Rating, RatingValuePropsType} from "./components/Rating"
-import {OnOffSwitcher} from "./components/OnOffSwitcher"
-import {ControlledInput} from "./components/ControlledInput";
-import {ControlledCheckbox} from "./components/ControlledCheckbox";
-import {ControlledSelect} from "./components/ControlledSelect";
+import {Accordion} from './components/Accordion/Accordion'
+import {Rating, RatingValuePropsType} from "./components/Rating/Rating"
+import {OnOffSwitcher} from "./components/OnOffSwitcher/OnOffSwitcher"
+import {ControlledInput} from "./components/ControlledElements/ControlledInput";
+import {ControlledCheckbox} from "./components/ControlledElements/ControlledCheckbox";
+import {ControlledSelect} from "./components/ControlledElements/ControlledSelect";
 
 export const App = () => {
 

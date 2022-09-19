@@ -1,7 +1,5 @@
 import React, {useState} from 'react'
-import {ButtonRating} from "../UI/ButtonRating";
 import {Star} from "./Star";
-import {AccordionBody} from "./AccordionBody";
 
 export type RatingValuePropsType = 0 | 1 | 2 | 3 | 4 | 5
 
@@ -12,12 +10,7 @@ type RatingPropsType = {
 
 export const Rating = (props: RatingPropsType) => {
 
-    /*let [rating, setRating] = useState(0);*/
     let [ratingCollapsed, setRatingCollapsed] = useState<boolean>(false);
-
-    /*const addStar = (star:number) => {
-        props.setRating(star);
-    }*/
 
     const ratingHandlerCollapsed = () => {
         setRatingCollapsed(!ratingCollapsed);
