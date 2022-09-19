@@ -6,7 +6,7 @@ export type SelectBodyPropsType = {
     //onClickSelectValue: (selectValue: string) => void
 }
 
-export const SelectBody: FC<SelectBodyPropsType> = (props) => {
+export const SelectBody: React.FC<SelectBodyPropsType> = (props) => {
 
     const [parentSelectValue, setParentSelectValue] = useState<string | undefined>('React');
 

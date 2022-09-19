@@ -17,7 +17,7 @@ export type MenuItem = {
     title: string
 }
 
-export const Accordion: FC<AccordionPropsType> = ({title, menu1CollapsedControlled, setMenu1CollapsedControlled}) => {
+export const Accordion: React.FC<AccordionPropsType> = ({title, menu1CollapsedControlled, setMenu1CollapsedControlled}) => {
 
     /*let [menu2CollapsedUncontrolled, setMenu2CollapsedUncontrolled] = useState<boolean>(false);*/
 

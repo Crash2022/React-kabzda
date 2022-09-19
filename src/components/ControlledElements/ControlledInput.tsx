@@ -4,7 +4,7 @@ export type ControlledInputPropsType = {
 
 }
 
-export const ControlledInput: FC<ControlledInputPropsType> = ({}) => {
+export const ControlledInput: React.FC<ControlledInputPropsType> = ({}) => {
 
     const [parentInputValue, setParentInputValue] = useState('');
 

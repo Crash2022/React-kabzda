@@ -6,7 +6,7 @@ export type AccordionTitleType = {
     setMenu1CollapsedControlled: (value: boolean) => void
 }
 
-export const AccordionTitle: FC<AccordionTitleType> = ({title, menu1CollapsedControlled, setMenu1CollapsedControlled}) => {
+export const AccordionTitle: React.FC<AccordionTitleType> = ({title, menu1CollapsedControlled, setMenu1CollapsedControlled}) => {
 
     return (
         <>

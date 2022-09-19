@@ -4,7 +4,7 @@ export type ControlledCheckboxPropsType = {
 
 }
 
-export const ControlledSelect: FC<ControlledCheckboxPropsType> = ({}) => {
+export const ControlledSelect: React.FC<ControlledCheckboxPropsType> = () => {
 
     const [parentSelectValue, setParentSelectValue] = useState<string | undefined>('3');
 

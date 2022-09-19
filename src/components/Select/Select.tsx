@@ -2,25 +2,19 @@ import React, {FC, useState} from 'react'
 import {v1} from "uuid";
 import {SelectBody} from "./SelectBody";
 
-export type SelectPropsType = {
-
-}
-
-export type SelectItems = Array<SelectItem>
-
 export type SelectItem = {
     id: string
     title: string
 }
 
-export const Select: FC<SelectPropsType> = (props) => {
+export const Select: React.FC = () => {
 
-    const [selectItems, setSelectItems] = useState<SelectItems>([
+    const [selectItems, setSelectItems] = useState<Array<SelectItem>>([
         {id: v1(), title: 'HTML'},
         {id: v1(), title: 'CSS'},
         {id: v1(), title: 'JavaScript'},
         {id: v1(), title: 'React'},
-        {id: v1(), title: 'Angular'},
+        {id: v1(), title: 'Angular'}
     ])
 
     /*const onClickSelectValue = (selectValue: string) => {
