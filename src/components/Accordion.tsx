@@ -33,13 +33,17 @@ export const Accordion: FC<AccordionPropsType> = ({title, menu1CollapsedControll
         {id: v1(), title: 'Меню 5'},
     ])
 
+    const onClickHandler = (menuId: string) => {
+        console.log('was clicked ' + menuId);
+    }
+
     return (
         <div style={{margin: "20px 0px"}}>
             <AccordionTitle title={title}
                             menu1CollapsedControlled={menu1CollapsedControlled}
                             setMenu1CollapsedControlled={setMenu1CollapsedControlled}
             />
-            { !menu1CollapsedControlled ? <AccordionBody menuItems={menuItems}/> : '' }
+            { !menu1CollapsedControlled ? <AccordionBody menuItems={menuItems} onClickHandler={onClickHandler}/> : '' }
             {/*<AccordionTitle title={title} collapseMenu={buttonHandlerCollapsed}/>*/}
             {/*{ !menu2CollapsedUncontrolled ? <AccordionBody/> : '' }*/}
         </div>
