@@ -21,7 +21,8 @@ export const App = () => {
                 <h1 style={{margin: "20px 0px"}}>REACT "Кабзда как просто"</h1>
                 <Accordion title={"Меню 1 - контролируемое"}
                            menu1CollapsedControlled={menu1CollapsedControlled}
-                           setMenu1CollapsedControlled={setMenu1CollapsedControlled}/>
+                           setMenu1CollapsedControlled={setMenu1CollapsedControlled}
+                />
                 {/*<Accordion title={"Меню 2 - неконтролируемое"}/>*/}
                 <Rating rating={rating} onClickStar={setRating}/>
                 <OnOffSwitcher lightValue={light} lightChange={setLight}/>

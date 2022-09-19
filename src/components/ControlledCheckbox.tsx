@@ -14,7 +14,7 @@ export const ControlledCheckbox: FC<ControlledCheckboxPropsType> = ({}) => {
 
     return (
         <div style={{margin: "20px 0px"}}>
-            <input type="checkbox" onChange={onChangeCheckboxHandler}/>
+            <input type="checkbox" checked={parentCheckboxValue} onChange={onChangeCheckboxHandler}/>
         </div>
     );
 }
