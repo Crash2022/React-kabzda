@@ -7,7 +7,7 @@ type StarPropsType = {
     pushStar: (value: RatingValuePropsType) => void
 }
 
-export const Star = (props: StarPropsType) => {
+export const Star: React.FC<StarPropsType> = (props) => {
 
     const selectStarHandler = () => {
         props.pushStar(props.rating)

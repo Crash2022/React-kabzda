@@ -1,10 +1,6 @@
-import React, {ChangeEvent, FC, useState} from 'react'
+import React, {ChangeEvent, useState} from 'react'
 
-export type ControlledCheckboxPropsType = {
-
-}
-
-export const ControlledSelect: React.FC<ControlledCheckboxPropsType> = () => {
+export const ControlledSelect = () => {
 
     const [parentSelectValue, setParentSelectValue] = useState<string | undefined>('3');
 

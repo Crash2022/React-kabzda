@@ -6,7 +6,7 @@ export type SwitcherLightPropsType = {
     lightChange: (valueLight: boolean)=> void
 }
 
-export const OnOffSwitcher = (props: SwitcherLightPropsType) => {
+export const OnOffSwitcher: React.FC<SwitcherLightPropsType> = (props) => {
 
     const switcherOn = `${props.lightValue && styles.on}`
     const switcherOff = `${!props.lightValue && styles.off}`

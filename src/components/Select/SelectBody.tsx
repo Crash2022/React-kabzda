@@ -1,4 +1,4 @@
-import React, {ChangeEvent, FC, useState} from 'react'
+import React, {ChangeEvent, useState} from 'react'
 import {SelectItem} from "./Select";
 
 export type SelectBodyPropsType = {

@@ -8,7 +8,7 @@ type RatingPropsType = {
     onClickStar: (value: RatingValuePropsType) => void
 }
 
-export const Rating = (props: RatingPropsType) => {
+export const Rating: React.FC<RatingPropsType> = (props) => {
 
     let [ratingCollapsed, setRatingCollapsed] = useState<boolean>(false);
 

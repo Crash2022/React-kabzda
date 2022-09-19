@@ -1,4 +1,4 @@
-import React, {FC, useState} from 'react'
+import React, {useState} from 'react'
 import {v1} from "uuid";
 import {SelectBody} from "./SelectBody";
 
@@ -7,7 +7,7 @@ export type SelectItem = {
     title: string
 }
 
-export const Select: React.FC = () => {
+export const Select = () => {
 
     const [selectItems, setSelectItems] = useState<Array<SelectItem>>([
         {id: v1(), title: 'HTML'},

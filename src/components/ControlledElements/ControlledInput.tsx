@@ -1,10 +1,6 @@
-import React, {ChangeEvent, FC, useState} from 'react'
+import React, {ChangeEvent, useState} from 'react'
 
-export type ControlledInputPropsType = {
-
-}
-
-export const ControlledInput: React.FC<ControlledInputPropsType> = ({}) => {
+export const ControlledInput = () => {
 
     const [parentInputValue, setParentInputValue] = useState('');
 
