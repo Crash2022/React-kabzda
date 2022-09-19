@@ -8,7 +8,7 @@ export type SelectBodyPropsType = {
 
 export const SelectBody: FC<SelectBodyPropsType> = (props) => {
 
-    const [parentSelectValue, setParentSelectValue] = useState<string | undefined>('3');
+    const [parentSelectValue, setParentSelectValue] = useState<string | undefined>('React');
 
     const onChangeSelectHandler = (event: ChangeEvent<HTMLSelectElement>) => {
         setParentSelectValue(event.currentTarget.value);
@@ -19,13 +19,12 @@ export const SelectBody: FC<SelectBodyPropsType> = (props) => {
         <div>
             <div style={{margin: "10px 0px"}}>
                 {parentSelectValue}
-                .value
             </div>
             <select value={parentSelectValue} onChange={onChangeSelectHandler}>
                 {
                     props.selectItems.map((option, index) => {
                         return (
-                            <option key={option.id} value={index+1}>{option.title}</option>
+                            <option key={option.id} value={option.title}>{option.title}</option>
                         )
                     })
                 }
