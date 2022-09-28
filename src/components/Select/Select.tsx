@@ -23,7 +23,7 @@ export const Select = () => {
 
     return (
         <div style={{margin: "20px 0px"}}>
-            <div style={{margin: "10px 0px"}}>Любимая тема для изучения</div>
+            <div style={{margin: "10px 0px"}}>Тема для изучения</div>
             <SelectBody selectItems={selectItems} />
         </div>
     );

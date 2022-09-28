@@ -5,7 +5,6 @@ import {Delete} from "@material-ui/icons";
 
 export type SelectBodyPropsType = {
     selectItems: Array<SelectItem>
-    //onClickSelectValue: (selectValue: string) => void
 }
 
 export const SelectBody: React.FC<SelectBodyPropsType> = (props) => {
@@ -14,16 +13,11 @@ export const SelectBody: React.FC<SelectBodyPropsType> = (props) => {
 
     const onChangeSelectHandler = (event: ChangeEvent<HTMLSelectElement>) => {
         setParentSelectValue(event.currentTarget.value);
-        //props.onClickSelectValue(event.currentTarget.value);
     }
-
-    const buttonHandler = () => {console.log('using material UI')}
 
     return (
         <div>
-            <div style={{margin: "10px 0px"}}>
-                {parentSelectValue}
-            </div>
+
             <select value={parentSelectValue} onChange={onChangeSelectHandler}>
                 {
                     props.selectItems.map((option, index) => {
@@ -34,10 +28,13 @@ export const SelectBody: React.FC<SelectBodyPropsType> = (props) => {
                 }
             </select>
             <div style={{margin: "10px 0px"}}>
+                Вы выбрали: {parentSelectValue}
+            </div>
+            {/*<div style={{margin: "10px 0px"}}>
                 <IconButton onClick={()=>console.log('material UI')}>
                     <Delete />
                 </IconButton>
-            </div>
+            </div>*/}
         </div>
     );
 }
