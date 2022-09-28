@@ -1,8 +1,7 @@
-import React, {FC, useState} from 'react'
+import React, {useState} from 'react'
 import {AccordionTitle} from "./AccordionTitle"
 import {AccordionBody} from "./AccordionBody"
 import {v1} from "uuid";
-import {MenuStateType} from "./Accordion-reducer";
 
 export type AccordionPropsType = {
     title: string
@@ -15,7 +14,6 @@ export type MenuItems = Array<MenuItem>
 export type MenuItem = {
     id: string
     title: string
-    //state: MenuStateType
 }
 
 export const Accordion: React.FC<AccordionPropsType> = ({title, collapsed, setMenu1CollapsedControlled}) => {
