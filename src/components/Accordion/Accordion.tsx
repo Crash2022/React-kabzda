@@ -2,11 +2,11 @@ import React, {FC, useState} from 'react'
 import {AccordionTitle} from "./AccordionTitle"
 import {AccordionBody} from "./AccordionBody"
 import {v1} from "uuid";
+import {MenuStateType} from "./Accordion-reducer";
 
 export type AccordionPropsType = {
     title: string
-    collapsed?: boolean
-    menu1CollapsedControlled: boolean
+    collapsed: boolean
     setMenu1CollapsedControlled: (value: boolean) => void
 }
 
@@ -15,9 +15,10 @@ export type MenuItems = Array<MenuItem>
 export type MenuItem = {
     id: string
     title: string
+    //state: MenuStateType
 }
 
-export const Accordion: React.FC<AccordionPropsType> = ({title, menu1CollapsedControlled, setMenu1CollapsedControlled}) => {
+export const Accordion: React.FC<AccordionPropsType> = ({title, collapsed, setMenu1CollapsedControlled}) => {
 
     /*let [menu2CollapsedUncontrolled, setMenu2CollapsedUncontrolled] = useState<boolean>(false);*/
 
@@ -40,10 +41,10 @@ export const Accordion: React.FC<AccordionPropsType> = ({title, menu1CollapsedCo
     return (
         <div style={{margin: "20px 0px"}}>
             <AccordionTitle title={title}
-                            menu1CollapsedControlled={menu1CollapsedControlled}
+                            menu1CollapsedControlled={collapsed}
                             setMenu1CollapsedControlled={setMenu1CollapsedControlled}
             />
-            { !menu1CollapsedControlled ? <AccordionBody menuItems={menuItems} onClickHandler={onClickHandler}/> : '' }
+            { !collapsed ? <AccordionBody menuItems={menuItems} onClickHandler={onClickHandler}/> : '' }
             {/*<AccordionTitle title={title} collapseMenu={buttonHandlerCollapsed}/>*/}
             {/*{ !menu2CollapsedUncontrolled ? <AccordionBody/> : '' }*/}
         </div>
