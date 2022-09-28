@@ -1,12 +1,13 @@
-export type MenuActionType = {
-    type: 'CHANGE-MENU-COLLAPSE'
+export type MenuActionTypes = {
+    type: string
 }
 
 export type MenuStateType = {
+    //type: 'CHANGE-MENU-COLLAPSE'
     collapsed: boolean
 }
 
-export const accordionReducer = (state: MenuStateType, action: MenuActionType): MenuStateType => {
+export const accordionReducer = (state: MenuStateType, action: MenuActionTypes): MenuStateType => {
     switch(action.type) {
         case "CHANGE-MENU-COLLAPSE": {
             /*const stateCopy = {...state};
@@ -22,3 +23,11 @@ export const accordionReducer = (state: MenuStateType, action: MenuActionType): 
             return state;
     }
 }
+
+/*
+export const CollapseMenuAC = (collapsed: boolean): MenuStateType => {
+    return {
+        type: 'CHANGE-MENU-COLLAPSE',
+        collapsed: collapsed
+    }
+}*/
