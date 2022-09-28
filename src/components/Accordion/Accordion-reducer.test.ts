@@ -9,6 +9,7 @@ test('collapsed menu', ()=>{
 
     //action
     const endState = accordionReducer(startState, {type: 'CHANGE-MENU-COLLAPSE'});
+    //const endState = accordionReducer(startState, CollapseMenuAC(true));
 
     //expect
     expect(endState.collapsed).toBe(true);

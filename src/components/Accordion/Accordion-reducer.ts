@@ -25,9 +25,9 @@ export const accordionReducer = (state: MenuStateType, action: MenuActionTypes):
 }
 
 /*
-export const CollapseMenuAC = (collapsed: boolean): MenuStateType => {
+export const CollapseMenuAC = (collapsedValue: boolean): MenuStateType => {
     return {
         type: 'CHANGE-MENU-COLLAPSE',
-        collapsed: collapsed
+        collapsed: collapsedValue
     }
 }*/
