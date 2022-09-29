@@ -1,4 +1,4 @@
-import {accordionReducer, MenuStateType} from "./Accordion-reducer";
+import {accordionReducer, collapseMenuAC, MenuStateType} from "./Accordion-reducer";
 
 test('collapsed menu', ()=>{
 
@@ -8,8 +8,8 @@ test('collapsed menu', ()=>{
     }
 
     //action
-    const endState = accordionReducer(startState, {type: 'CHANGE-MENU-COLLAPSE'});
-    //const endState = accordionReducer(startState, CollapseMenuAC(true));
+    // const endState = accordionReducer(startState, {type: 'CHANGE-MENU-COLLAPSE'});
+    const endState = accordionReducer(startState, collapseMenuAC());
 
     //expect
     expect(endState.collapsed).toBe(true);

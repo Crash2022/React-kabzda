@@ -1,4 +1,4 @@
-import React, {useReducer, useState} from 'react'
+import React, {useReducer} from 'react'
 import './App.css'
 import {AccordionMemo} from './components/Accordion/Accordion'
 import {RatingMemo, RatingValuePropsType} from "./components/Rating/Rating"
@@ -7,7 +7,7 @@ import {ControlledInputMemo} from "./components/ControlledElements/ControlledInp
 import {ControlledCheckboxMemo} from "./components/ControlledElements/ControlledCheckbox";
 import {ControlledSelectMemo} from "./components/ControlledElements/ControlledSelect";
 import {SelectMemo} from "./components/Select/Select";
-import {accordionReducer} from "./components/Accordion/Accordion-reducer";
+import {accordionReducer, collapseMenuAC} from "./components/Accordion/Accordion-reducer";
 
 
 const Accordion = React.memo(AccordionMemo);
@@ -33,7 +33,7 @@ export const App = () => {
                 />*/}
                 <Accordion title={"Меню 1 - контролируемое"}
                            collapsed={state.collapsed}
-                           setMenu1CollapsedControlled={()=>dispatch({type: 'CHANGE-MENU-COLLAPSE'})}
+                           setMenu1CollapsedControlled={()=>dispatch(collapseMenuAC())}
                 />
 
                 {/*<Accordion title={"Меню 2 - неконтролируемое"}/>*/}

@@ -6,7 +6,7 @@ import {v1} from "uuid";
 export type AccordionPropsType = {
     title: string
     collapsed: boolean
-    setMenu1CollapsedControlled: (value: boolean) => void
+    setMenu1CollapsedControlled: () => void
 }
 
 export type MenuItems = Array<MenuItem>
