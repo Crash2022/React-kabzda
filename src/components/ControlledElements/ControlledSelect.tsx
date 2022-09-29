@@ -1,6 +1,8 @@
 import React, {ChangeEvent, useState} from 'react'
 
-export const ControlledSelect = () => {
+export const ControlledSelectMemo = () => {
+
+    console.log('select');
 
     const [parentSelectValue, setParentSelectValue] = useState<string | undefined>('3');
 

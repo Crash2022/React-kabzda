@@ -1,6 +1,8 @@
 import React, {ChangeEvent, useState} from 'react'
 
-export const ControlledCheckbox = () => {
+export const ControlledCheckboxMemo = () => {
+
+    console.log('checkbox');
 
     const [parentCheckboxValue, setParentCheckboxValue] = useState<boolean>(true);
 

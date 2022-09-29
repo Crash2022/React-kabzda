@@ -8,6 +8,8 @@ export type AccordionTitleType = {
 
 export const AccordionTitle: React.FC<AccordionTitleType> = ({title, menu1CollapsedControlled, setMenu1CollapsedControlled}) => {
 
+    console.log('accordionTitle');
+
     return (
         <>
             <h2 onClick={ () => {setMenu1CollapsedControlled(!menu1CollapsedControlled)} }

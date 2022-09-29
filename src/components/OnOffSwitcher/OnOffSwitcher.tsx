@@ -1,18 +1,17 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styles from './OnOffSwitcher.module.css'
 
-export type SwitcherLightPropsType = {
-    lightValue: boolean
-    lightChange: (valueLight: boolean)=> void
-}
+export const OnOffSwitcherMemo: React.FC = (props) => {
 
-export const OnOffSwitcher: React.FC<SwitcherLightPropsType> = (props) => {
+    console.log('OnOffSwitcher');
 
-    const switcherOn = `${props.lightValue && styles.on}`
-    const switcherOff = `${!props.lightValue && styles.off}`
+    const [light, setLight] = useState<boolean>(false);
+
+    const switcherOn = `${light && styles.on}`
+    const switcherOff = `${!light && styles.off}`
 
     const onClickHandler = () => {
-        props.lightChange(!props.lightValue)
+        setLight(!light);
     }
 
     return (

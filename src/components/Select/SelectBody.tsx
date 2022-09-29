@@ -1,13 +1,13 @@
 import React, {ChangeEvent, useState} from 'react'
 import {SelectItem} from "./Select";
-import {IconButton} from "@material-ui/core";
-import {Delete} from "@material-ui/icons";
 
 export type SelectBodyPropsType = {
     selectItems: Array<SelectItem>
 }
 
 export const SelectBody: React.FC<SelectBodyPropsType> = (props) => {
+
+    console.log('selectSTUDY body');
 
     const [parentSelectValue, setParentSelectValue] = useState<string | undefined>('React');
 
@@ -30,11 +30,6 @@ export const SelectBody: React.FC<SelectBodyPropsType> = (props) => {
             <div style={{margin: "10px 0px"}}>
                 Вы выбрали: {parentSelectValue}
             </div>
-            {/*<div style={{margin: "10px 0px"}}>
-                <IconButton onClick={()=>console.log('material UI')}>
-                    <Delete />
-                </IconButton>
-            </div>*/}
         </div>
     );
 }

@@ -1,6 +1,8 @@
 import React, {ChangeEvent, useState} from 'react'
 
-export const ControlledInput = () => {
+export const ControlledInputMemo = () => {
+
+    console.log('input');
 
     const [parentInputValue, setParentInputValue] = useState('');
 

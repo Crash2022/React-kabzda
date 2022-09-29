@@ -8,6 +8,8 @@ export type AccordionBodyPropsType = {
 
 export const AccordionBody: React.FC<AccordionBodyPropsType> = (props) => {
 
+    console.log('accordionBody');
+
     return (
         <ul>
             {

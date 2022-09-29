@@ -9,6 +9,8 @@ type StarPropsType = {
 
 export const Star: React.FC<StarPropsType> = (props) => {
 
+    console.log('ratingStar');
+
     const selectStarHandler = () => {
         props.pushStar(props.rating)
     }

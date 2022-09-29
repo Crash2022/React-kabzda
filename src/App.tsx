@@ -1,22 +1,27 @@
 import React, {useReducer, useState} from 'react'
 import './App.css'
-import {Accordion} from './components/Accordion/Accordion'
-import {Rating, RatingValuePropsType} from "./components/Rating/Rating"
-import {OnOffSwitcher} from "./components/OnOffSwitcher/OnOffSwitcher"
-import {ControlledInput} from "./components/ControlledElements/ControlledInput";
-import {ControlledCheckbox} from "./components/ControlledElements/ControlledCheckbox";
-import {ControlledSelect} from "./components/ControlledElements/ControlledSelect";
-import {Select} from "./components/Select/Select";
+import {AccordionMemo} from './components/Accordion/Accordion'
+import {RatingMemo, RatingValuePropsType} from "./components/Rating/Rating"
+import {OnOffSwitcherMemo} from "./components/OnOffSwitcher/OnOffSwitcher"
+import {ControlledInputMemo} from "./components/ControlledElements/ControlledInput";
+import {ControlledCheckboxMemo} from "./components/ControlledElements/ControlledCheckbox";
+import {ControlledSelectMemo} from "./components/ControlledElements/ControlledSelect";
+import {SelectMemo} from "./components/Select/Select";
 import {accordionReducer} from "./components/Accordion/Accordion-reducer";
+
+
+const Accordion = React.memo(AccordionMemo);
+const Rating = React.memo(RatingMemo);
+const OnOffSwitcher = React.memo(OnOffSwitcherMemo);
+const ControlledInput = React.memo(ControlledInputMemo);
+const ControlledCheckbox = React.memo(ControlledCheckboxMemo);
+const ControlledSelect = React.memo(ControlledSelectMemo);
+const Select = React.memo(SelectMemo);
 
 export const App = () => {
 
-    let [rating, setRating] = useState<RatingValuePropsType>(0);
-
     //let [menu1CollapsedControlled, setMenu1CollapsedControlled] = useState<boolean>(false);
     let [state, dispatch] = useReducer(accordionReducer, {collapsed: false});
-
-    const [light, setLight] = useState<boolean>(false);
 
     return (
         <div className="App">
@@ -32,8 +37,8 @@ export const App = () => {
                 />
 
                 {/*<Accordion title={"Меню 2 - неконтролируемое"}/>*/}
-                <Rating rating={rating} onClickStar={setRating}/>
-                <OnOffSwitcher lightValue={light} lightChange={setLight}/>
+                <Rating />
+                <OnOffSwitcher />
                 <ControlledInput />
                 <ControlledCheckbox />
                 <ControlledSelect />

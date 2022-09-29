@@ -7,7 +7,9 @@ export type SelectItem = {
     title: string
 }
 
-export const Select = () => {
+export const SelectMemo = () => {
+
+    console.log('selectSTUDY main');
 
     const [selectItems, setSelectItems] = useState<Array<SelectItem>>([
         {id: v1(), title: 'HTML'},

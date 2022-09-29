@@ -3,14 +3,12 @@ import {Star} from "./Star";
 
 export type RatingValuePropsType = 0 | 1 | 2 | 3 | 4 | 5
 
-type RatingPropsType = {
-    rating: RatingValuePropsType
-    onClickStar: (value: RatingValuePropsType) => void
-}
+export const RatingMemo: React.FC = (props) => {
 
-export const Rating: React.FC<RatingPropsType> = (props) => {
+    console.log('rating');
 
-    let [ratingCollapsed, setRatingCollapsed] = useState<boolean>(false);
+    const [rating, setRating] = useState<RatingValuePropsType>(0);
+    const [ratingCollapsed, setRatingCollapsed] = useState<boolean>(false);
 
     const ratingHandlerCollapsed = () => {
         setRatingCollapsed(!ratingCollapsed);
@@ -22,14 +20,14 @@ export const Rating: React.FC<RatingPropsType> = (props) => {
 
             { ratingCollapsed ?
                 <>
-                    <Star rating={1} selected={props.rating > 0} pushStar={props.onClickStar}/>
-                    <Star rating={2} selected={props.rating > 1} pushStar={props.onClickStar}/>
-                    <Star rating={3} selected={props.rating > 2} pushStar={props.onClickStar}/>
-                    <Star rating={4} selected={props.rating > 3} pushStar={props.onClickStar}/>
-                    <Star rating={5} selected={props.rating > 4} pushStar={props.onClickStar}/>
+                    <Star rating={1} selected={rating > 0} pushStar={setRating}/>
+                    <Star rating={2} selected={rating > 1} pushStar={setRating}/>
+                    <Star rating={3} selected={rating > 2} pushStar={setRating}/>
+                    <Star rating={4} selected={rating > 3} pushStar={setRating}/>
+                    <Star rating={5} selected={rating > 4} pushStar={setRating}/>
                     <span>
                     <button style={{marginLeft: "10px"}}
-                        onClick={ () => {props.onClickStar(0)} }>
+                        onClick={ () => {setRating(0)} }>
                         not rated
                     </button>
                     </span>
