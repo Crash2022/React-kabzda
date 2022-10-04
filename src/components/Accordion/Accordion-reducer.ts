@@ -12,7 +12,6 @@ export type MenuStateType = {
 export const accordionReducer = (state: MenuStateType, action: ActionTypes): MenuStateType => {
     switch(action.type) {
         case "CHANGE-MENU-COLLAPSE": {
-            debugger
             /*const stateCopy = {...state};
             stateCopy.collapsed = !state.collapsed;
             return stateCopy;*/

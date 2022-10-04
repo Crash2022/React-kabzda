@@ -8,6 +8,7 @@ import {ControlledCheckboxMemo} from "./components/ControlledElements/Controlled
 import {ControlledSelectMemo} from "./components/ControlledElements/ControlledSelect";
 import {SelectMemo} from "./components/Select/Select";
 import {accordionReducer, collapseMenuAC} from "./components/Accordion/Accordion-reducer";
+import {Calculator} from "./components/Calculator/Calculator";
 
 
 const Accordion = React.memo(AccordionMemo);
@@ -37,12 +38,13 @@ export const App = () => {
                 />
 
                 {/*<Accordion title={"Меню 2 - неконтролируемое"}/>*/}
-                <Rating />
-                <OnOffSwitcher />
-                <ControlledInput />
-                <ControlledCheckbox />
-                <ControlledSelect />
-                <Select />
+                <Rating/>
+                <OnOffSwitcher/>
+                <ControlledInput/>
+                <ControlledCheckbox/>
+                <ControlledSelect/>
+                <Select/>
+                <Calculator/>
             </div>
         </div>
     );
