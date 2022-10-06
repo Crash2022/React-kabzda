@@ -9,7 +9,9 @@ export type CitiesPropsType = {
     populationArray: Array<CitiesType>
 }
 
-export const Cities = (props: CitiesPropsType) => {
+export const CitiesMemo = (props: CitiesPropsType) => {
+
+    console.log('cities');
 
     return (
             <div style={{marginTop: '20px', height: '250px'}}>
@@ -35,6 +37,7 @@ export const Cities = (props: CitiesPropsType) => {
                     }
                 </select>
 
+                {/*<div style={{marginBottom: '10px', marginTop: '10px'}}>Города заканчивающиеся на "УРГ"</div>*/}
                 <div style={{marginBottom: '10px', marginTop: '10px'}}>Города на букву Б</div>
                 <select>
                     {

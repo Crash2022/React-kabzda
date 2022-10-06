@@ -9,7 +9,8 @@ import {ControlledSelectMemo} from "./components/ControlledElements/ControlledSe
 import {SelectMemo} from "./components/Select/Select";
 import {accordionReducer, collapseMenuAC} from "./components/Accordion/Accordion-reducer";
 import {CalculatorMemo} from "./components/Calculator/Calculator";
-import {Cities} from "./components/Cities/Cities";
+import {CitiesMemo} from "./components/Cities/Cities";
+//import {Cities} from "./components/Cities/Cities";
 //import {Calculator} from "./components/Calculator/Calculator";
 
 
@@ -21,6 +22,7 @@ const ControlledCheckbox = React.memo(ControlledCheckboxMemo);
 const ControlledSelect = React.memo(ControlledSelectMemo);
 const Select = React.memo(SelectMemo);
 const Calculator = React.memo(CalculatorMemo);
+const Cities = React.memo(CitiesMemo);
 
 export type CitiesType = {
     id: number
@@ -54,9 +56,25 @@ export const App = () => {
         {id: 9, country: 'Kazakhstan', city: 'Karaganda', population: 500000},
     ]);
 
-    const countryArray = cities.filter(el => el.country === 'Russia');
-    const cityStartsArray = cities.filter(el => el.city.toLowerCase().indexOf('urg') > -1);
-    const populationArray = cities.filter(el => el.population >= 2000000);
+    //const countryArray = cities.filter(el => el.country === 'Russia');
+    //const cityStartsArray = cities.filter(el => el.city.toLowerCase().indexOf('urg') > -1);
+    //const populationArray = cities.filter(el => el.population >= 2000000);
+
+    const countryArrayProps = useMemo(()=> {
+        const countryArray = cities.filter(el => el.country === 'Russia');
+        return countryArray;
+    }, [])
+
+    const cityStartsArrayProps = useMemo(()=> {
+        //const cityStartsArray = cities.filter(el => el.city.toLowerCase().indexOf('urg') > -1);
+        const cityStartsArray = cities.filter(el => el.city[0] === 'B');
+        return cityStartsArray;
+    }, [])
+
+    const populationArrayProps = useMemo(()=> {
+        const populationArray = cities.filter(el => el.population >= 2000000);
+        return populationArray;
+    }, [])
 
     return (
         <div className="App">
@@ -85,9 +103,9 @@ export const App = () => {
                 {counter}
 
                 <Cities cities={cities}
-                        countryArray={countryArray}
-                        cityStartsArray={cityStartsArray}
-                        populationArray={populationArray}
+                        countryArray={countryArrayProps}
+                        cityStartsArray={cityStartsArrayProps}
+                        populationArray={populationArrayProps}
                 />
             </div>
         </div>
