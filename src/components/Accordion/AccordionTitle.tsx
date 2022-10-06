@@ -12,7 +12,7 @@ export const AccordionTitle: React.FC<AccordionTitleType> = ({title, menu1Collap
 
     return (
         <>
-            <h2 onClick={ () => {setMenu1CollapsedControlled()} }
+            <h2 onClick={setMenu1CollapsedControlled}
                 style={{minWidth: "250px"}}>
                 {title}
             </h2>

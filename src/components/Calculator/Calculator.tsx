@@ -1,6 +1,12 @@
 import React, {ChangeEvent, useMemo, useState} from 'react'
 
-export const CalculatorMemo = () => {
+export type CalculatorPropsType = {
+    title: string
+}
+
+export const CalculatorMemo = (props: CalculatorPropsType) => {
+
+    console.log('Factorial');
 
     const [firstValue, setFirstValue] = useState<number>(5);
     const [secondValue, setSecondValue] = useState<number>(3);
@@ -30,7 +36,7 @@ export const CalculatorMemo = () => {
 
     return (
         <div>
-            Factorial
+            {props.title}
             <div>
                 <input value={firstValue}
                        onChange={(event: ChangeEvent<HTMLInputElement>) => setFirstValue(+event.currentTarget.value)}/>
