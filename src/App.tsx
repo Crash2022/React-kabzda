@@ -9,6 +9,7 @@ import {ControlledSelectMemo} from "./components/ControlledElements/ControlledSe
 import {SelectMemo} from "./components/Select/Select";
 import {accordionReducer, collapseMenuAC} from "./components/Accordion/Accordion-reducer";
 import {CalculatorMemo} from "./components/Calculator/Calculator";
+import {Cities} from "./components/Cities/Cities";
 //import {Calculator} from "./components/Calculator/Calculator";
 
 
@@ -21,6 +22,13 @@ const ControlledSelect = React.memo(ControlledSelectMemo);
 const Select = React.memo(SelectMemo);
 const Calculator = React.memo(CalculatorMemo);
 
+export type CitiesType = {
+    id: number
+    country: string,
+    city: string,
+    population: number
+}
+
 export const App = () => {
 
     //let [menu1CollapsedControlled, setMenu1CollapsedControlled] = useState<boolean>(false);
@@ -29,10 +37,26 @@ export const App = () => {
     const[title, setTitle] = useState<string>('Factorial');
     const[counter, setCounter] = useState<number>(0);
 
-    const collapseMenu1 = useCallback(()=> {
+    const collapseMenuFunc = useCallback(()=> {
         const collapseMenu = dispatch(collapseMenuAC());
         return collapseMenu;
     }, []);
+
+    const[cities, setCities] = useState<Array<CitiesType>>([
+        {id: 1, country: 'Russia', city: 'Orenburg', population: 600000},
+        {id: 2, country: 'Russia', city: 'Moscow', population: 10000000},
+        {id: 3, country: 'Russia', city: 'Saint-Petersburg', population: 6500000},
+        {id: 4, country: 'Belarus', city: 'Minsk', population: 1900000},
+        {id: 5, country: 'Belarus', city: 'Brest', population: 1500000},
+        {id: 6, country: 'Belarus', city: 'Bobruisk', population: 900000},
+        {id: 7, country: 'Kazakhstan', city: 'Alma-ata', population: 2000000},
+        {id: 8, country: 'Kazakhstan', city: 'Shimkent', population: 200000},
+        {id: 9, country: 'Kazakhstan', city: 'Karaganda', population: 500000},
+    ]);
+
+    const countryArray = cities.filter(el => el.country === 'Russia');
+    const cityStartsArray = cities.filter(el => el.city.toLowerCase().indexOf('urg') > -1);
+    const populationArray = cities.filter(el => el.population >= 2000000);
 
     return (
         <div className="App">
@@ -45,7 +69,7 @@ export const App = () => {
                 <Accordion title={"Меню 1 - контролируемое"}
                            collapsed={state.collapsed}
                            /*setMenu1CollapsedControlled={() => dispatch(collapseMenuAC())}*/
-                           setMenu1CollapsedControlled={collapseMenu1}
+                           setMenu1CollapsedControlled={collapseMenuFunc}
                 />
 
                 {/*<Accordion title={"Меню 2 - неконтролируемое"}/>*/}
@@ -59,6 +83,12 @@ export const App = () => {
 
                 <button onClick={()=>setCounter(counter+1)}>+</button>
                 {counter}
+
+                <Cities cities={cities}
+                        countryArray={countryArray}
+                        cityStartsArray={cityStartsArray}
+                        populationArray={populationArray}
+                />
             </div>
         </div>
     );

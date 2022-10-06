@@ -35,7 +35,7 @@ export const CalculatorMemo = (props: CalculatorPropsType) => {
 
 
     return (
-        <div>
+        <div style={{marginTop: '20px', marginBottom: '20px'}}>
             {props.title}
             <div>
                 <input value={firstValue}

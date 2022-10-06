@@ -17,7 +17,6 @@ export const SelectBody: React.FC<SelectBodyPropsType> = (props) => {
 
     return (
         <div>
-
             <select value={parentSelectValue} onChange={onChangeSelectHandler}>
                 {
                     props.selectItems.map((option, index) => {
@@ -30,6 +29,7 @@ export const SelectBody: React.FC<SelectBodyPropsType> = (props) => {
             <div style={{margin: "10px 0px"}}>
                 Вы выбрали: {parentSelectValue}
             </div>
+            <hr/>
         </div>
     );
 }
