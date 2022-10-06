@@ -8,7 +8,7 @@ import {ControlledCheckboxMemo} from "./components/ControlledElements/Controlled
 import {ControlledSelectMemo} from "./components/ControlledElements/ControlledSelect";
 import {SelectMemo} from "./components/Select/Select";
 import {accordionReducer, collapseMenuAC} from "./components/Accordion/Accordion-reducer";
-import {Calculator} from "./components/Calculator/Calculator";
+import {CalculatorMemo} from "./components/Calculator/Calculator";
 
 
 const Accordion = React.memo(AccordionMemo);
@@ -18,6 +18,7 @@ const ControlledInput = React.memo(ControlledInputMemo);
 const ControlledCheckbox = React.memo(ControlledCheckboxMemo);
 const ControlledSelect = React.memo(ControlledSelectMemo);
 const Select = React.memo(SelectMemo);
+const Calculator = React.memo(CalculatorMemo);
 
 export const App = () => {
 

@@ -1,30 +1,32 @@
 import React, {ChangeEvent, useMemo, useState} from 'react'
 
-export const Calculator = () => {
+export const CalculatorMemo = () => {
 
     const [firstValue, setFirstValue] = useState<number>(5);
     const [secondValue, setSecondValue] = useState<number>(3);
 
     let firstResult = 1;
-    let secondResult = 1;
 
-    useMemo(()=> {
+    firstResult = useMemo(() => {
+        let tempFirstResult = 1;
         for (let i = 1; i <= firstValue; i++) {
             let fake = 0;
             while (fake < 10000000) {
                 fake++;
                 const fakeValue = Math.random();
             }
-            firstResult = firstResult * i;
+            tempFirstResult = tempFirstResult * i;
         }
+        return tempFirstResult;
     }, [firstValue])
+    //console.log(firstResult);
 
-    console.log(firstResult);
-
+    let secondResult = 1;
     for (let i = 1; i <= secondValue; i++) {
         secondResult = secondResult * i;
     }
-    console.log(secondResult);
+    //console.log(secondResult);
+
 
     return (
         <div>
@@ -42,5 +44,4 @@ export const Calculator = () => {
             <div>{secondResult}</div>
         </div>
 
-    );
-}
+    );}
