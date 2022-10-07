@@ -1,6 +1,6 @@
 import React, {ChangeEvent, useMemo, useState} from 'react'
 import {CitiesType} from "../../App";
-//import {v1} from "uuid";
+import {v1} from "uuid";
 
 export type CitiesPropsType = {
     cities: Array<CitiesType>
@@ -20,7 +20,7 @@ export const CitiesMemo = (props: CitiesPropsType) => {
                     {
                         props.cities.map(city => {
                             return (
-                                <option key={city.id}>{city.city}</option>
+                                <option key={v1()}>{city.city}</option>
                             )
                         })
                     }

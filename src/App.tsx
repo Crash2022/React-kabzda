@@ -10,6 +10,7 @@ import {SelectMemo} from "./components/Select/Select";
 import {accordionReducer, collapseMenuAC} from "./components/Accordion/Accordion-reducer";
 import {CalculatorMemo} from "./components/Calculator/Calculator";
 import {CitiesMemo} from "./components/Cities/Cities";
+import {v1} from "uuid";
 //import {Cities} from "./components/Cities/Cities";
 //import {Calculator} from "./components/Calculator/Calculator";
 
@@ -25,7 +26,7 @@ const Calculator = React.memo(CalculatorMemo);
 const Cities = React.memo(CitiesMemo);
 
 export type CitiesType = {
-    id: number
+    id: string
     country: string,
     city: string,
     population: number
@@ -45,15 +46,15 @@ export const App = () => {
     }, []);
 
     const[cities, setCities] = useState<Array<CitiesType>>([
-        {id: 1, country: 'Russia', city: 'Orenburg', population: 600000},
-        {id: 2, country: 'Russia', city: 'Moscow', population: 10000000},
-        {id: 3, country: 'Russia', city: 'Saint-Petersburg', population: 6500000},
-        {id: 4, country: 'Belarus', city: 'Minsk', population: 1900000},
-        {id: 5, country: 'Belarus', city: 'Brest', population: 1500000},
-        {id: 6, country: 'Belarus', city: 'Bobruisk', population: 900000},
-        {id: 7, country: 'Kazakhstan', city: 'Alma-ata', population: 2000000},
-        {id: 8, country: 'Kazakhstan', city: 'Shimkent', population: 200000},
-        {id: 9, country: 'Kazakhstan', city: 'Karaganda', population: 500000},
+        {id: v1(), country: 'Russia', city: 'Orenburg', population: 600000},
+        {id: v1(), country: 'Russia', city: 'Moscow', population: 10000000},
+        {id: v1(), country: 'Russia', city: 'Saint-Petersburg', population: 6500000},
+        {id: v1(), country: 'Belarus', city: 'Minsk', population: 1900000},
+        {id: v1(), country: 'Belarus', city: 'Brest', population: 1500000},
+        {id: v1(), country: 'Belarus', city: 'Bobruisk', population: 900000},
+        {id: v1(), country: 'Kazakhstan', city: 'Alma-ata', population: 2000000},
+        {id: v1(), country: 'Kazakhstan', city: 'Shimkent', population: 200000},
+        {id: v1(), country: 'Kazakhstan', city: 'Karaganda', population: 500000}
     ]);
 
     //const countryArray = cities.filter(el => el.country === 'Russia');
@@ -75,6 +76,10 @@ export const App = () => {
         const populationArray = cities.filter(el => el.population >= 2000000);
         return populationArray;
     }, [])
+
+    const addCityHandler = () => {
+        setCities( [...cities, {id: v1(), country: 'Russia', city: 'Ekaterinburg', population: 1500000}] );
+    }
 
     return (
         <div className="App">
@@ -107,6 +112,8 @@ export const App = () => {
                         cityStartsArray={cityStartsArrayProps}
                         populationArray={populationArrayProps}
                 />
+
+                <button onClick={addCityHandler} style={{marginBottom: '30px'}}>Add city</button>
             </div>
         </div>
     );
