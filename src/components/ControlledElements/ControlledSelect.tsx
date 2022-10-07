@@ -1,6 +1,6 @@
 import React, {ChangeEvent, useState} from 'react'
 
-export const ControlledSelectMemo = () => {
+export const ControlledSelect = React.memo (() => {
 
     console.log('select');
 
@@ -19,4 +19,4 @@ export const ControlledSelectMemo = () => {
             </select>
         </div>
     );
-}
+})

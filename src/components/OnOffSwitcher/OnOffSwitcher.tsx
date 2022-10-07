@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import styles from './OnOffSwitcher.module.css'
 
-export const OnOffSwitcherMemo: React.FC = (props) => {
+export const OnOffSwitcher = React.memo ((props) => {
 
     console.log('OnOffSwitcher');
 
@@ -21,4 +21,4 @@ export const OnOffSwitcherMemo: React.FC = (props) => {
             <div className={`${styles.light} ${switcherOn} ${switcherOff}`}></div>
         </div>
     )
-}
+})

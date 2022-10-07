@@ -3,7 +3,7 @@ import {Star} from "./Star";
 
 export type RatingValuePropsType = 0 | 1 | 2 | 3 | 4 | 5
 
-export const RatingMemo: React.FC = (props) => {
+export const Rating = React.memo ((props) => {
 
     console.log('rating');
 
@@ -36,4 +36,4 @@ export const RatingMemo: React.FC = (props) => {
             }
         </div>
     );
-}
+})

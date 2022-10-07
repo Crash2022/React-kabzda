@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {FC, useState} from 'react';
 import {AccordionTitle} from "./AccordionTitle"
 import {AccordionBody} from "./AccordionBody"
 import {v1} from "uuid";
@@ -16,7 +16,7 @@ export type MenuItem = {
     title: string
 }
 
-export const AccordionMemo: React.FC<AccordionPropsType> = ({title, collapsed, setMenu1CollapsedControlled}) => {
+export const Accordion: FC<AccordionPropsType> = React.memo (({title, collapsed, setMenu1CollapsedControlled}) => {
 
     console.log('accordion');
 
@@ -49,4 +49,4 @@ export const AccordionMemo: React.FC<AccordionPropsType> = ({title, collapsed, s
             {/*{ !menu2CollapsedUncontrolled ? <AccordionBody/> : '' }*/}
         </div>
     );
-}
+})

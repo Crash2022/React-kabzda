@@ -4,7 +4,7 @@ export type CalculatorPropsType = {
     title: string
 }
 
-export const CalculatorMemo = (props: CalculatorPropsType) => {
+export const Calculator = React.memo((props: CalculatorPropsType) => {
 
     console.log('Factorial');
 
@@ -50,4 +50,5 @@ export const CalculatorMemo = (props: CalculatorPropsType) => {
             <div>{secondResult}</div>
         </div>
 
-    );}
+    );
+})

@@ -7,7 +7,7 @@ export type SelectItem = {
     title: string
 }
 
-export const SelectMemo = () => {
+export const Select = React.memo (() => {
 
     console.log('selectSTUDY main');
 
@@ -29,4 +29,4 @@ export const SelectMemo = () => {
             <SelectBody selectItems={selectItems} />
         </div>
     );
-}
+})

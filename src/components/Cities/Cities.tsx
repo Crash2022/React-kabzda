@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useMemo, useState} from 'react'
+import React from 'react';
 import {CitiesType} from "../../App";
 import {v1} from "uuid";
 
@@ -9,7 +9,7 @@ export type CitiesPropsType = {
     populationArray: Array<CitiesType>
 }
 
-export const CitiesMemo = (props: CitiesPropsType) => {
+export const Cities = React.memo ( (props: CitiesPropsType) => {
 
     console.log('cities');
 
@@ -60,4 +60,5 @@ export const CitiesMemo = (props: CitiesPropsType) => {
                     }
                 </select>
             </div>
-    );}
+    );
+})

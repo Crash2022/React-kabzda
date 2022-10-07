@@ -1,6 +1,6 @@
 import React, {ChangeEvent, useState} from 'react'
 
-export const ControlledInputMemo = () => {
+export const ControlledInput = React.memo (() => {
 
     console.log('input');
 
@@ -15,4 +15,4 @@ export const ControlledInputMemo = () => {
             <input type="text" value={parentInputValue} onChange={onChangeInputHandler}/>
         </div>
     );
-}
+})
