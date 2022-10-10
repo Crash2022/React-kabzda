@@ -1,4 +1,4 @@
-import React, {useMemo, useReducer, useState, useCallback} from 'react'
+import React, {useMemo, useReducer, useState, useCallback, useEffect} from 'react'
 import './App.css'
 import {Accordion} from './components/Accordion/Accordion'
 import {Rating} from "./components/Rating/Rating"
@@ -11,6 +11,7 @@ import {accordionReducer, collapseMenuAC} from "./components/Accordion/Accordion
 import {Calculator} from "./components/Calculator/Calculator";
 import {Cities} from "./components/Cities/Cities";
 import {v1} from "uuid";
+import {Books} from "./components/Books/Books";
 
 export type CitiesType = {
     id: string
@@ -64,9 +65,27 @@ export const App = () => {
         return populationArray;
     }, [])
 
+    /*------------------------------------------------------------*/
+
     const addCityHandler = () => {
-        setCities( [...cities, {id: v1(), country: 'Russia', city: 'Ekaterinburg', population: 1500000}] );
+        setCities( [...cities, {id: v1(), country: 'Russia', city: 'Ekaterinburg2', population: 1500000}] );
     }
+
+    const[books, setBooks] = useState(['React', 'JS', 'CSS']);
+
+    const booksArray = useMemo (()=>{
+        const booksArray = books.filter( book => book.toLowerCase().indexOf('s') > -1);
+        return booksArray;
+    },[books])
+
+    // useEffect(()=>{
+    //     //setBooks([...books, 'SetBooks']);
+    // },[books])
+
+    const addBook = useCallback(() => {
+        console.log(books);
+        return setBooks([...books, 'SetBooks']);
+    },[books])
 
     return (
         <div className="App">
@@ -101,6 +120,8 @@ export const App = () => {
                 />
 
                 <button onClick={addCityHandler} style={{marginBottom: '30px'}}>Add city</button>
+
+                <Books books={books} addBook={addBook} booksArray={booksArray}/>
             </div>
         </div>
     );
