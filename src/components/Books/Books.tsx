@@ -24,7 +24,7 @@ export const Books = React.memo((props: BooksPropsType) => {
                 }
             </div>
 
-            <hr/>
+            <span>Другой Select:</span>
 
             <div>
                 {
@@ -34,6 +34,7 @@ export const Books = React.memo((props: BooksPropsType) => {
                         )
                     })
                 }
+                <hr/>
             </div>
         </>
     );

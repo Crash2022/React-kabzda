@@ -12,6 +12,7 @@ import {Calculator} from "./components/Calculator/Calculator";
 import {Cities} from "./components/Cities/Cities";
 import {v1} from "uuid";
 import {Books} from "./components/Books/Books";
+import {Timer} from "./components/Timer/Timer";
 
 export type CitiesType = {
     id: string
@@ -122,6 +123,7 @@ export const App = () => {
                 <button onClick={addCityHandler} style={{marginBottom: '30px'}}>Add city</button>
 
                 <Books books={books} addBook={addBook} booksArray={booksArray}/>
+                <Timer/>
             </div>
         </div>
     );
